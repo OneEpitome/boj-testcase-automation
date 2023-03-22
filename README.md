@@ -2,7 +2,10 @@
 백준 문제 테스트 케이스 자동화 스크립트
 
 
-#How To Use?
+# How To Use?
+
+1. Write your source code in code.py
+2. Enter the command below
 
 ```
 python3 tester.py [Problem Number]
