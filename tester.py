@@ -31,7 +31,7 @@ count = 0
 print(f'There are {N} test cases ...')
 
 for i in range(N):
-    result = subprocess.run(["python3", "code.py"], input=inputs[i], capture_output=True, text=True)  # 스크립트 실행 및 인수 전달
+    result = subprocess.run(["python3", "solution.py"], input=inputs[i], capture_output=True, text=True)  # 스크립트 실행 및 인수 전달
     if (result.stdout.rstrip() == outputs[i].rstrip()):
         print("PASS")
         count += 1
