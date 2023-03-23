@@ -25,6 +25,7 @@ inputs = [''.join(element.itertext()) for element in tree.cssselect(inputSelecto
 outputs = [''.join(element.itertext()) for element in tree.cssselect(outputSelector)]
 
 N = len(inputs) # a number of test cases
+incorrect = []
 count = 0
 
 print(f'There are {N} test cases ...')
@@ -36,8 +37,12 @@ for i in range(N):
         count += 1
 
     else:
-        print(f'Wrong : {result.stdout}, Answer : {outputs[0]}')
+        incorrect.append(f'\nFailed Case {i+1} : \nInput :\n{inputs[i]}\nWrong : {result.stdout}, Answer : {outputs[0]}')
         print("Fail")
 
 if count == N:
     print("All Test cases are passed")
+else:
+    print(f'{count} success of {N} test cases')
+    for inc in incorrect:
+        print(inc)
